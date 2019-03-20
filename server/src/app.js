@@ -19,6 +19,15 @@ db.once("open", function(callback){
   console.log("Connection Succeeded");
 });
 
+app.get('/', (req, res) => {
+  res.send(
+    [{
+      title: "Hello World!",
+      description: "Hi there! How are you?"
+    }]
+)
+})
+
 // Fetch all posts
 app.get('/serv/posts', (req, res) => {
   Post.find({}, 'title description', function (error, posts) {
