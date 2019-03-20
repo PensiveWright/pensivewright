@@ -20,7 +20,7 @@ db.once("open", function(callback){
 });
 
 // Fetch all posts
-app.get('/posts', (req, res) => {
+app.get('/serv/posts', (req, res) => {
   Post.find({}, 'title description', function (error, posts) {
     if (error) { console.error(error); }
     res.send({
@@ -31,7 +31,7 @@ app.get('/posts', (req, res) => {
 
 
 // Add new post
-app.post('/posts', (req, res) => {
+app.post('/serv/posts', (req, res) => {
   var db = req.db;
   var title = req.body.title;
   var description = req.body.description;
