@@ -16,6 +16,11 @@ export default new Router({
       path: '/posts',
       name: 'Posts',
       component: Posts
+    },
+    {
+      path: '/posts/new',
+      name: 'NewPost',
+      component: NewPost
     }
   ]
 })
