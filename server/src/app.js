@@ -8,7 +8,7 @@ var Post = require("../models/post");
 const app = express()
 app.use(morgan('combined'))
 app.use(bodyParser.json())
-app.use(cors())
+app.use(cors({credentials: true, origin: true}))
 
 
 var mongoose = require('mongoose');
@@ -53,6 +53,7 @@ app.post('/posts', (req, res) => {
 
 
 app.listen(process.env.PORT || 8081)
+
 
 
 
