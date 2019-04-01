@@ -4,8 +4,8 @@
     <div v-if="posts.length > 0" class="table-wrap">
       <div>
         <router-link v-bind:to="{ name: 'NewPost' }" class="">Add Post</router-link>
-            </div>
-            <table>
+      </div>
+      <table>
         <tr>
           <td>Title</td>
           <td width="550">Description</td>
@@ -15,9 +15,9 @@
           <td>{{ post.title }}</td>
           <td>{{ post.description }}</td>
           <td align="center">
-	          <router-link v-bind:to="{ name: 'EditPost', params: { id: post._id } }">Edit</router-link>
-	          <a href="#">Delete</a>
-	        </td>
+            <router-link v-bind:to="{ name: 'EditPost', params: { id: post._id } }">Edit</router-link>
+            <a href="#">Delete</a>
+          </td>
         </tr>
       </table>
     </div>
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-//import PostsService from '@/services/PostsService'
+import PostsService from '@/services/PostsService'
 export default {
   name: 'Posts',
   data () {

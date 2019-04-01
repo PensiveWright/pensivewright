@@ -8,7 +8,7 @@ var Post = require("../models/post");
 const app = express()
 app.use(morgan('combined'))
 app.use(bodyParser.json())
-app.use(cors({credentials: true, origin: true}))
+app.use(cors({origin: "http://localhost:8080"}))
 
 
 var mongoose = require('mongoose');
@@ -29,7 +29,13 @@ app.get('/', (req, res) => {
 })
 
 // Fetch all posts
-app.get('/serv/posts', (req, res) => {
+app.get('/posts', (req, res) => {
+  /*
+  res.send({posts: [{
+    title: "First Post",
+    description: "This is working, good job!"
+  }]})
+  */
   Post.find({}, 'title description', function (error, posts) {
     if (error) { console.error(error); }
     res.send({
@@ -40,7 +46,7 @@ app.get('/serv/posts', (req, res) => {
 
 
 // Add new post
-app.post('/serv/posts', (req, res) => {
+app.post('/posts', (req, res) => {
   var db = req.db;
   var title = req.body.title;
   var description = req.body.description;
@@ -48,7 +54,6 @@ app.post('/serv/posts', (req, res) => {
     title: title,
     description: description
   })
-
   new_post.save(function (error) {
     if (error) {
       console.log(error)
