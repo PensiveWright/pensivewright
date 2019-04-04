@@ -19,7 +19,7 @@ db.once("open", function(callback){
   console.log("Connection Succeeded");
 });
 
-app.get('/', (req, res) => {
+app.get('/serv', (req, res) => {
   res.send(
     [{
       title: "Hello World!",
@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 })
 
 // Fetch all posts
-app.get('/posts', (req, res) => {
+app.get('/serv/posts', (req, res) => {
   /*
   res.send({posts: [{
     title: "First Post",
@@ -46,7 +46,7 @@ app.get('/posts', (req, res) => {
 
 
 // Add new post
-app.post('/posts', (req, res) => {
+app.post('/serv/posts', (req, res) => {
   var db = req.db;
   var title = req.body.title;
   var description = req.body.description;
