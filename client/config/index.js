@@ -3,7 +3,7 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
-const host = 'localhost'
+const host = '127.0.0.1'
 const port = 8080
 
 module.exports = {
