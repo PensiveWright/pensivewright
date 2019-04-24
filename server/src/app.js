@@ -31,10 +31,10 @@ app.get('/serv', (req, res) => {
 // Fetch all posts
 app.get('/serv/posts', (req, res) => {
   
-  res.send({posts: [{
+  res.send({posts: {
     title: "First Post",
     description: "This is working, good job!"
-  }]})
+  }})
   
  /*
   Post.find({}, 'title description', function (error, posts) {
