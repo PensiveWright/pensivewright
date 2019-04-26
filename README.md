@@ -1,7 +1,7 @@
 # pensivewright
 
 
-
+~~~~
 server {
     listen 443 ssl http2;
     listen [::]:443 ssl http2;
@@ -43,3 +43,4 @@ server {
     }
     client_max_body_size 50m;
 }
+~~~~
